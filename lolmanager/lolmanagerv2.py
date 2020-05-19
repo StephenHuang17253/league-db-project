@@ -8,7 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 project_dir = os.path.dirname(os.path.abspath(__file__))
-database_file = "sqlite:///{}".format(os.path.join(project_dir, "leaguedatabase - Copy.db"))
+database_file = "sqlite:///{}".format(os.path.join(project_dir, "leaguedatabase.db"))
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = database_file
@@ -17,18 +17,20 @@ db = SQLAlchemy(app)
 
 class Champion(db.Model):
     name = db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
-    role = db.Column(db.String(80), unique=False, nullable=False, primary_key=False) 
-    region = db.Column(db.String(80), unique=False, nullable=False, primary_key=False)
+    role = db.Column(db.String(80), unique=False, nullable=False, primary_key=False, foreign_key=True)
+    region = db.Column(db.String(80), unique=False, nullable=False, primary_key=False, foreign_key=True)
+    champ_class = db.Column(db.String(80), unique=False, nullable=False, primary_key=False, foreign_key=True)
 
     def __repr__(self):
         return "<name: {}>".format(self.name)
+
 
 @app.route('/', methods=["GET", "POST"])
 def home(): 
     champions = None
     if request.form:
         try:
-            champion = Champion(name=request.form.get("name"), role=request.form.get("role"), region=request.form.get("region"))
+            champion = Champion(name=request.form.get("name"), role=request.form.get("role"), region=request.form.get("region"), champ_class=request.form.get("class"))
             db.session.add(champion)
             db.session.commit()
         except Exception as e:
@@ -50,13 +52,13 @@ def update():
         print(e)
     return redirect("/")
 
-@app.route("/updateauthor", methods=["POST"])
-def updateauthor():
+@app.route("/updaterole", methods=["POST"])
+def updaterole():
     try:
-        newauthor = request.form.get("newauthor")
-        oldauthor = request.form.get("oldauthor")
-        champion = Champion.query.filter_by(role=oldauthor).first()
-        champion.role = newauthor
+        newrole = request.form.get("newrole")
+        oldrole = request.form.get("oldrole")
+        champion = Champion.query.filter_by(role=oldrole).first()
+        champion.role = newrole
         db.session.commit()
     except Exception as e:
         print("Couldn't update role")
@@ -73,6 +75,19 @@ def updateregion():
         db.session.commit()
     except Exception as e:
         print("Couldn't update region")
+        print(e)
+    return redirect("/")
+
+@app.route("/updatechamp_class", methods=["POST"])
+def updatechamp_class():
+    try:
+        newchamp_class = request.form.get("newchamp_class")
+        oldchamp_class = request.form.get("oldchamp_class")
+        champion = Champion.query.filter_by(champ_class=oldchamp_class).first()
+        champion.champ_class = newchamp_class
+        db.session.commit()
+    except Exception as e:
+        print("Couldn't update class")
         print(e)
     return redirect("/")
 

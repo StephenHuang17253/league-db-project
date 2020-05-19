@@ -11,15 +11,43 @@
     </head>
 <body>
 
-    <h1>Add Name - Role - Region</h1>
+    <h1>Add Name - Role - Region - Class</h1>
     <form method="POST" action="/">
       <input type="text" name="name">
-      <input type="text" name="role">
-      <input type="text" name="region">
+      <select name="role">
+        <option value="Top">Top</option>
+        <option value="Jungle">Jungle</option>
+        <option value="Mid">Mid</option>
+        <option value="ADC">ADC</option>
+        <option value="Support">Support</option>
+      /<select>
+      <select name="region">
+        <option value="Shurima">Shurima</option>
+        <option value="Demacia">Demacia</option>
+        <option value="Noxus">Noxus</option>
+        <option value="Ionia">Ionia</option>
+        <option value="Piltover">Piltover</option>
+        <option value="Bilgewater">Bilgewater</option>
+        <option value="Shadow Isles">Shadow Isles</option>
+        <option value="Freljord">Freljord</option>
+        <option value="Mount Targon">Mount Targon</option>
+        <option value="Zaun">Zaun</option>
+        <option value="Independent">Independent</option>
+      /<select>
+      <select name="class">
+        <option value="Fighter">Fighter</option>
+        <option value="Assassin">Assassin</option>
+        <option value="Bruiser">Bruiser</option>
+        <option value="Control Mage">Control Mage</option>
+        <option value="Burst Mage">Burst Mage</option>
+        <option value="Marksman">Marksman</option>
+        <option value="Tank">Tank</option>
+        <option value="Support">Support</option>
+      /<select>
       <input type="submit" value="Add">
     </form>
 
-    <h1>Champion | Role | Region</h1>
+    <h1>Champion | Role | Region | Class</h1>
     <table>
       {% for champion in champions %}
         <tr>
@@ -34,13 +62,19 @@
             </form>
           </td>
           <td>
-              <td>
-        {{champion.role}}
+        <td>
+          {{champion.role}}
         </td>
         <td>
-          <form method="POST" action="./updateauthor" style="display: inline">
-            <input type="hidden" value="{{champion.role}}" name="oldauthor">
-            <input type="text" value="{{champion.role}}" name="newauthor">
+          <form method="POST" action="./updaterole" style="display: inline">
+            <input type="hidden" value="{{champion.role}}" name="oldrole">
+            <select value={{champion.role}} name="newrole">
+              <option value="Top">Top</option>
+              <option value="Jungle">Jungle</option>
+              <option value="Mid">Mid</option>
+              <option value="ADC">ADC</option>
+              <option value="Support">Support</option>
+            /<select>
             <input type="submit" value="Update">
           </form>
             <form method="POST" action="./delete" style="display: inline">
@@ -53,9 +87,42 @@
         <td>
           <form method="POST" action="./updateregion" style="display: inline">
             <input type="hidden" value="{{champion.region}}" name="oldregion">
-            <input type="text" value="{{champion.region}}" name="newregion">
+            <select value="{{champion.region}}" name="newregion">
+              <option value="Shurima">Shurima</option>
+              <option value="Demacia">Demacia</option>
+              <option value="Noxus">Noxus</option>
+              <option value="Ionia">Ionia</option>
+              <option value="Piltover">Piltover</option>
+              <option value="Bilgewater">Bilgewater</option>
+              <option value="Shadow Isles">Shadow Isles</option>
+              <option value="Freljord">Freljord</option>
+              <option value="Mount Targon">Mount Targon</option>
+              <option value="Zaun">Zaun</option>
+              <option value="Independent">Independent</option>
+            /<select>
             <input type="submit" value="Update">
           </form>
+          </td>
+          <td>
+          {{champion.champ_class}}
+          </td>
+          <td>
+          <form method="POST" action="./updatechamp_class" style="display: inline">
+            <input type="hidden" value="{{champion.champ_class}}" name="oldchamp_class">
+            <select value="{{champion.champ_class}}" name="newchamp_class">
+              <option value="Fighter">Fighter</option>
+              <option value="Assassin">Assassin</option>
+              <option value="Bruiser">Bruiser</option>
+              <option value="Control Mage">Control Mage</option>
+              <option value="Burst Mage">Burst Mage</option>
+              <option value="Marksman">Marksman</option>
+              <option value="Tank">Tank</option>
+              <option value="Support">Support</option>
+            /<select>
+            <input type="submit" value="Update">
+          </form>
+          </td>
+          <td>
             <form method="POST" action="./delete" style="display: inline">
               <input type="hidden" value="{{champion.name}}" name="name">
               <input type="submit" value="Delete">
