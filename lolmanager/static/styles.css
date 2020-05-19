@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=El+Messiri&display=swap');
+body {
+    font-family: 'Raleway';
+    color:rgb(88, 173, 165);
+    background-color: rgb(55, 55, 55);
+    padding: 150px;
+}
+
+h1 {
+    font-family: "El Messiri";
+    color:rgb(88, 173, 165);
+}
+
+header {
+    font-family: "Julius Sans One";
+    color: rgb(88, 173, 165);
+    font-size: 300%;
+}
+ 

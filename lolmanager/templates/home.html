@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=El+Messiri&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="/static/styles.css">
+      <title>League Champions Database</title>
+      <header>League Champions CRUD</header>
+      <subhead>by Stephen Huang</subhead>
+    </head>
+<body>
+
+    <h1>Add Name - Role - Region</h1>
+    <form method="POST" action="/">
+      <input type="text" name="name">
+      <input type="text" name="role">
+      <input type="text" name="region">
+      <input type="submit" value="Add">
+    </form>
+
+    <h1>Champion | Role | Region</h1>
+    <table>
+      {% for champion in champions %}
+        <tr>
+          <td>
+            {{champion.name}}
+          </td>
+          <td>
+            <form method="POST" action="./update" style="display: inline">
+              <input type="hidden" value="{{champion.name}}" name="oldtitle">
+              <input type="text" value="{{champion.name}}" name="newtitle">
+              <input type="submit" value="Update">
+            </form>
+          </td>
+          <td>
+              <td>
+        {{champion.role}}
+        </td>
+        <td>
+          <form method="POST" action="./updateauthor" style="display: inline">
+            <input type="hidden" value="{{champion.role}}" name="oldauthor">
+            <input type="text" value="{{champion.role}}" name="newauthor">
+            <input type="submit" value="Update">
+          </form>
+            <form method="POST" action="./delete" style="display: inline">
+              <input type="hidden" value="{{champion.name}}" name="name">
+            </form>
+          </td>
+          <td>
+        {{champion.region}}
+        </td>
+        <td>
+          <form method="POST" action="./updateregion" style="display: inline">
+            <input type="hidden" value="{{champion.region}}" name="oldregion">
+            <input type="text" value="{{champion.region}}" name="newregion">
+            <input type="submit" value="Update">
+          </form>
+            <form method="POST" action="./delete" style="display: inline">
+              <input type="hidden" value="{{champion.name}}" name="name">
+              <input type="submit" value="Delete">
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
