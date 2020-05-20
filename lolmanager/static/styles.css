@@ -5,12 +5,13 @@ body {
     font-family: 'Raleway';
     color:rgb(88, 173, 165);
     background-color: rgb(55, 55, 55);
-    padding: 150px;
+    padding: 120px;
 }
 
 h1 {
     font-family: "El Messiri";
     color:rgb(88, 173, 165);
+    word-spacing: 135px;    
 }
 
 header {
