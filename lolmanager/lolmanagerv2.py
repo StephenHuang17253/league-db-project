@@ -30,7 +30,7 @@ def home():
     champions = None
     if request.form:
         try:
-            champion = Champion(name=request.form.get("name"), role=request.form.get("role"), region=request.form.get("region"), champ_class=request.form.get("class"))
+            champion = Champion(name=request.form.get("name"), role=request.form.get("role"), region=request.form.get("region"), champ_class=request.form.get("champ_class"))
             db.session.add(champion)
             db.session.commit()
         except Exception as e:
