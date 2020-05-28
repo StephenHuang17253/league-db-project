@@ -62,8 +62,8 @@
           </td>
           <td>
             <form method="POST" action="./update" style="display: inline">
-              <input type="hidden" value="{{champion.name}}" name="oldtitle">
-              <input type="text" value="{{champion.name}}" name="newtitle">
+              <input type="hidden" value="{{champion.name}}" name="oldname">
+              <input type="text" value="{{champion.name}}" name="newname">
               <input type="submit" value="Update">
             </form>
           </td>
@@ -72,7 +72,7 @@
         </td>
           <td>
             <form method="POST" action="./updaterole" style="display: inline">
-              <input type="hidden" value="{{champion.role}}" name="oldrole">
+              <input type="hidden" value="{{champion.name}}" name="oldrole">
               <select value="{{champion.role}}" name="newrole">
                 <option value="select" disabled>Select role:</option>              
                 <option value="Top">Top</option>
@@ -89,7 +89,7 @@
         </td>
         <td>
           <form method="POST" action="./updateregion" style="display: inline">
-            <input type="hidden" value="{{champion.region}}" name="oldregion">
+            <input type="hidden" value="{{champion.name}}" name="oldregion">
             <select value="{{champion.region}}" name="newregion">
               <option value="select" disabled>Select region:</option>              
               <option value="Shurima">Shurima</option>
@@ -114,7 +114,7 @@
           </td>
           <td>
           <form method="POST" action="./updatechamp_class" style="display: inline">
-            <input type="hidden" value="{{champion.champ_class}}" name="oldchamp_class">
+            <input type="hidden" value="{{champion.name}}" name="oldchamp_class">
             <select value="{{champion.champ_class}}" name="newchamp_class">
               <option value="select" disabled>Select class:</option>              
               <option value="Fighter" name="newchamp_class">Fighter</option>

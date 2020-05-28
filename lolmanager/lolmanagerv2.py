@@ -42,10 +42,10 @@ def home():
 @app.route("/update", methods=["POST"])
 def update():
     try:
-        newtitle = request.form.get("newtitle")
-        oldtitle = request.form.get("oldtitle")
-        champion = Champion.query.filter_by(name=oldtitle).first()
-        champion.name = newtitle
+        newname = request.form.get("newname")
+        oldname = request.form.get("oldname")
+        champion = Champion.query.filter_by(name=oldname).first()
+        champion.name = newname
         db.session.commit()
     except Exception as e:
         print("Couldn't update champion name")
@@ -57,7 +57,8 @@ def updaterole():
     try:
         newrole = request.form.get("newrole")
         oldrole = request.form.get("oldrole")
-        champion = Champion.query.filter_by(role=oldrole).first()
+        champion = db.session.query(Champion).\
+            filter_by(name=oldrole).first()                               
         champion.role = newrole
         db.session.commit()
     except Exception as e:
@@ -70,7 +71,7 @@ def updateregion():
     try:
         newregion = request.form.get("newregion")
         oldregion = request.form.get("oldregion")
-        champion = Champion.query.filter_by(region=oldregion).first()
+        champion = Champion.query.filter_by(name=oldregion).first()
         champion.region = newregion
         db.session.commit()
     except Exception as e:
@@ -83,7 +84,7 @@ def updatechamp_class():
     try:
         newchamp_class = request.form.get("newchamp_class")
         oldchamp_class = request.form.get("oldchamp_class")
-        champion = Champion.query.filter_by(champ_class=oldchamp_class).first()
+        champion = Champion.query.filter_by(name=oldchamp_class).first()
         champion.champ_class = newchamp_class
         db.session.commit()
     except Exception as e:
