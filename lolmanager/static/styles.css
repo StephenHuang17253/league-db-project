@@ -1,22 +1,47 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=El+Messiri&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
-    font-family: 'Raleway';
-    color:rgb(88, 173, 165);
-    background-color: rgb(55, 55, 55);
+    font-family: 'Roboto';
+    color: #5B84BF    ;
+    background-color:#FFFFFFFF;
     padding: 85px;
+    font-weight: bold;
+    position: absolute;
+    white-space: nowrap;
 }
 
 h1 {
-    font-family: "El Messiri";
-    color:rgb(88, 173, 165);
-    word-spacing: 135px;    
+    font-family: "Roboto";
+    color: #5B84B1FF;
+    word-spacing: 135px;   
+    font-weight: bold; 
 }
 
 header {
-    font-family: "Julius Sans One";
-    color: rgb(88, 173, 165);
+    font-family: "Roboto";
+    color: #5B84B1FF    ;
     font-size: 300%;
+    font-weight: bold;
 }
- 
+/*
+#41B3A3 - Blue-Green
+195190FF - Turkish Sea Blue
+#C38D9E - Purple-Pink
+#E8A87C - Subtle Orange
+
+#05386B - Imperial Blue
+#5CDB95 - Emerald Green
+#379683 - Dark Emerald Green
+
+
+#FC766AFF - Living Coral
+#5B84B1FF - Pacific Coast
+#FFFFFFFF - White
+#000000ff - Black
+2D2926FF - Grey Black
+
+rgb(55, 55, 55) - old background
+*/ 
