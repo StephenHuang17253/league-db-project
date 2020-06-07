@@ -5,12 +5,17 @@
 
 body {
     font-family: 'Roboto';
-    color: #5B84BF    ;
+    color: #5B84BF    ; 
     background-color:#FFFFFFFF;
     padding: 85px;
     font-weight: bold;
     position: absolute;
     white-space: nowrap;
+}
+h2 {
+    font-family: 'Roboto';
+    color: #5B84BF    ;
+    font-weight: bold;
 }
 
 h1 {
@@ -23,9 +28,33 @@ h1 {
 header {
     font-family: "Roboto";
     color: #5B84B1FF    ;
-    font-size: 300%;
+    font-size: 350%;
     font-weight: bold;
 }
+
+caption {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+table, th {
+    border: 1px solid #5B84BF;
+    border-collapse: collapse;
+}
+th {
+    text-align: left;
+    padding-left: 10px;
+}
+td {
+    padding: 10px;
+}
+
+
+tr:nth-child(even){
+    background: rgba(230, 227, 227, 0.507)
+}
+tr:hover {background-color: #5CDB95;}
+
 /*
 #41B3A3 - Blue-Green
 195190FF - Turkish Sea Blue

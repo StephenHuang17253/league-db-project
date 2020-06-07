@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
+  <div class="w3-bar w3-border w3-light-grey">
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-hover-green">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button w3-hover-blue">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-hover-teal">Link 3</a>
+  </div>
 <head>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
       <link rel="stylesheet" href="/static/styles.css">
       <title>League Champions Database</title>
       <header>League Champions DB</header>
       <subhead>by Stephen Huang</subhead>
     </head>
+
 <body>
 
     <h2>Add Name - Role - Region - Class</h2>
@@ -52,7 +60,14 @@
     </form>
 
     <h1>Champion | Role | Region | Class</h1>
-    <table>
+    <table> 
+      <caption>All 148 Champions as of May of Season 10</caption>
+          <tr>
+            <th colspan = 2>Name</th>
+            <th colspan = 2>Role</th>
+            <th colspan = 2>Region</th>
+            <th colspan = 3>Class</th>
+          </tr>
       {% for champion in champions %}
         <tr>
           <td>
