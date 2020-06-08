@@ -10,7 +10,7 @@ from flask_sqlalchemy import SQLAlchemy
 project_dir = os.path.dirname(os.path.abspath(__file__))
 database_file = "sqlite:///{}".format(os.path.join(project_dir, "leaguedatabase.db"))
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 app.config["SQLALCHEMY_DATABASE_URI"] = database_file
 
 db = SQLAlchemy(app)
@@ -26,6 +26,9 @@ class Champion(db.Model):
 
 
 @app.route('/', methods=["GET", "POST"])
+@app.route('/home', methods=["GET", "POST"])
+@app.route('/index', methods=["GET", "POST"])
+
 def home(): 
     champions = None
     if request.form:
@@ -39,6 +42,9 @@ def home():
     champions = Champion.query.all()
     return render_template("home.html", champions=champions)
 
+def index():
+    return render_template("index.html")
+    
 @app.route("/update", methods=["POST"])
 def update():
     try:

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a class="active" href="#index">Index</a></li>
+    <li><a href="#">Link 2</a></li>
+    <li><a href="#">Link 3</a></li>
+  </ul>
+<head>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="/static/styles.css">
+      <title>League Champions Database</title>
+      <header>League Champions DB</header>
+      <subhead>by Stephen Huang</subhead>
+    </head>
+
+<body>
+
+    <table> 
+      <caption>All 148 Champions as of June Season 10</caption>
+          <tr>
+            <th colspan = 1>Name</th>
+            <th colspan = 1>Role</th>
+            <th colspan = 1>Region</th>
+            <th colspan = 1>Class</th>
+          </tr>
+      {% for champion in champions %}
+        <tr>  
+          <td>
+            {{champion.name}}
+          </td>
+        <td>
+            {{champion.role}}
+        </td>
+          <td>
+        {{champion.region}}
+        </td>
+          <td>
+          {{champion.champ_class}}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

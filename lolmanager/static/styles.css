@@ -2,75 +2,139 @@
 @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=El+Messiri&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%; 
+    background-color: #5383e8;
+  }
+
+div {
+    padding: 0px !important;
+}
+
 
 body {
-    font-family: 'Roboto';
-    color: #5B84BF    ; 
-    background-color:#FFFFFFFF;
-    padding: 85px;
+    font-family: 'Raleway';
+    color: #5383e8    ; 
+    background-color: white;
+
     font-weight: bold;
-    position: absolute;
     white-space: nowrap;
+    text-align: center;
 }
 h2 {
-    font-family: 'Roboto';
-    color: #5B84BF    ;
+    font-family: 'Oswald';
+    color: #5383e8    ;
     font-weight: bold;
+    padding-top: 80px;
 }
 
+
+
 h1 {
-    font-family: "Roboto";
-    color: #5B84B1FF;
-    word-spacing: 135px;   
+    font-family: "Oswald";
+    color: #5383e8; 
     font-weight: bold; 
+    padding-bottom: 10px;
 }
 
 header {
-    font-family: "Roboto";
-    color: #5B84B1FF    ;
-    font-size: 350%;
+    padding-top: 110px;   
+    text-align: center;
+    font-family: "Julius Sans One";
+    color: #5383e8    ;
+    font-size: 560%;
     font-weight: bold;
 }
 
+
+.active {
+background-color: #195190FF;
+    }
+
+
+li  {
+    float: left;
+    border-right: 1px solid #bbb;
+  }
+
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+li a:hover {
+background-color: #111;
+}
 caption {
+    font-family: "Oswald";
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
+    padding: 20px;
 }
 
-table, th {
-    border: 1px solid #5B84BF;
+table#create {
+    float: center;
+    width: 100%;
+}
+table { 
+
+    border: 0px solid #5383e8;
     border-collapse: collapse;
+    width: 100%;  
 }
 th {
+    font-family: "Oswald";
     text-align: left;
-    padding-left: 10px;
+    background: #5383e8;
+    color: white;
+    padding: 10px;
+    font-size: 135%;
+
 }
 td {
     padding: 10px;
 }
 
+tr {
+    text-align: left;
+}
 
-tr:nth-child(even){
-    background: rgba(230, 227, 227, 0.507)
+tr:nth-child(odd){
+    background: #f2f2f2;
 }
 tr:hover {background-color: #5CDB95;}
 
 /*
 #41B3A3 - Blue-Green
-195190FF - Turkish Sea Blue
+#195190FF - Turkish Sea Blue
 #C38D9E - Purple-Pink
 #E8A87C - Subtle Orange
-
 #05386B - Imperial Blue
 #5CDB95 - Emerald Green
 #379683 - Dark Emerald Green
-
-
 #FC766AFF - Living Coral
 #5B84B1FF - Pacific Coast
 #FFFFFFFF - White
 #000000ff - Black
-2D2926FF - Grey Black
+#2D2926FF - Grey Black
+#7851a9 - Kelso Hoodie Purple
+#5383e8 - OP.GG Blue
+
 
 rgb(55, 55, 55) - old background
 */ 
