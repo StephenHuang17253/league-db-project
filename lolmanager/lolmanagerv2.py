@@ -27,7 +27,6 @@ class Champion(db.Model):
 
 @app.route('/', methods=["GET", "POST"])
 @app.route('/home', methods=["GET", "POST"])
-@app.route('/index', methods=["GET", "POST"])
 
 def home(): 
     champions = None
@@ -42,9 +41,13 @@ def home():
     champions = Champion.query.all()
     return render_template("home.html", champions=champions)
 
-def index():
-    return render_template("index.html")
-    
+@app.route('/edit', methods=["GET", "POST"])
+def edit(): 
+    champions = None
+    champions = Champion.query.all()
+    return render_template("edit.html", champions=champions)
+
+
 @app.route("/update", methods=["POST"])
 def update():
     try:

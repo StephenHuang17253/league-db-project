@@ -1,155 +1,42 @@
 <!DOCTYPE html>
 <html>
+  <ul>
+    <li><a class="active" href="/home">Home</a></li>
+    <li><a href="/edit">Editor</a></li>
+    <li><a href="#">Link 2</a></li>
+    <li><a href="#">Link 3</a></li>
+  </ul>
 <head>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="/static/styles.css">
-    <title>League Champions Database</title>
-    <header>League Champions DB</header>
-    <subhead>by Stephen Huang</subhead>
-  </head>
-  <nav>  
-    <ul>
-      <li><a class="active" href="#home">Home</a></li>
-      <li><a href="/index">Index</a></li>
-      <li><a href="#">Link 2</a></li>
-      <li><a href="#">Link 3</a></li>
-    </ul>
-  </nav>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="/static/styles.css">
+      <title>League Champions Database</title>
+      <header>League Champions DB</header>
+      <subhead>by Stephen Huang</subhead>
+    </head>
 
 <body>
-  <h2>CREATE NEW</h2>
-  <form method="POST" action="/">
-    <input type="text" name="name">
-    <select name="role">
-      <option value="select" disabled>Select role:</option>
-      <option value="Top">Top</option>
-      <option value="Jungle">Jungle</option>
-      <option value="Mid">Mid</option>
-      <option value="ADC">ADC</option>
-      <option value="Support">Support</option>
-    </select>
-    <select name="region">
-      <option value="select" disabled>Select region:</option>
-      <option value="Shurima">Shurima</option>
-      <option value="Demacia">Demacia</option>
-      <option value="Noxus">Noxus</option>
-      <option value="Ionia">Ionia</option>
-      <option value="Piltover">Piltover</option>
-      <option value="Bilgewater">Bilgewater</option>
-      <option value="Shadow Isles">Shadow Isles</option>
-      <option value="Freljord">Freljord</option>
-      <option value="Mount Targon">Mount Targon</option>
-      <option value="Zaun">Zaun</option>
-      <option value="The Void">The Void</option>
-      <option value="Bandle City">Bandle City</option>
-      <option value="Ixtal">Ixtal</option>
-      <option value="Independent">Independent</option>
-    </select>
-    <select name="champ_class">
-      <option value="select" disabled>Select class:</option>   
-      <option value="Fighter">Fighter</option>
-      <option value="Assassin">Assassin</option>
-      <option value="Juggernaut">Juggernaut</option>
-      <option value="Control Mage">Control Mage</option>
-      <option value="Burst Mage">Burst Mage</option>
-      <option value="Battlemage">Battlemage</option>
-      <option value="Marksman">Marksman</option>
-      <option value="Tank">Tank</option>
-      <option value="Support">Support</option>
-    </select>
-    <input type="submit" value="Add">
-  </form>
-    
+
     <table> 
       <caption>All 148 Champions as of June Season 10</caption>
-      
           <tr>
-            <th colspan = 2>Name</th>
-            <th colspan = 2>Role</th>
-            <th colspan = 2>Region</th>
-            <th colspan = 3>Class</th>
+            <th colspan = 1>Name</th>
+            <th colspan = 1>Role</th>
+            <th colspan = 1>Region</th>
+            <th colspan = 1>Class</th>
           </tr>
-      
       {% for champion in champions %}
-        <tr>
+        <tr>  
           <td>
             {{champion.name}}
           </td>
           <td>
-            <form method="POST" action="./update" style="display: inline">
-              <input type="hidden" value="{{champion.name}}" name="oldname">
-              <input type="text" value="{{champion.name}}" name="newname">
-              <input type="submit" value="Update">
-            </form>
-          </td>
-        <td>
             {{champion.role}}
-        </td>
-          <td>
-            <form method="POST" action="./updaterole" style="display: inline">
-              <input type="hidden" value="{{champion.name}}" name="oldrole">
-              <select value="{{champion.role}}" name="newrole">
-                <option value="select" disabled>Select role:</option>              
-                <option value="Top">Top</option>
-                <option value="Jungle">Jungle</option>
-                <option value="Mid">Mid</option>
-                <option value="ADC">ADC</option>
-                <option value="Support">Support</option>
-              </select>
-              <input type="submit" value="Update">
-            </form>    
           </td>
           <td>
-        {{champion.region}}
-        </td>
-        <td>
-          <form method="POST" action="./updateregion" style="display: inline">
-            <input type="hidden" value="{{champion.name}}" name="oldregion">
-            <select value="{{champion.region}}" name="newregion">
-              <option value="select" disabled>Select region:</option>              
-              <option value="Shurima">Shurima</option>
-              <option value="Demacia">Demacia</option>
-              <option value="Noxus">Noxus</option>
-              <option value="Ionia">Ionia</option>
-              <option value="Piltover">Piltover</option>
-              <option value="Bilgewater">Bilgewater</option>
-              <option value="Shadow Isles">Shadow Isles</option>
-              <option value="Freljord">Freljord</option>
-              <option value="Mount Targon">Mount Targon</option>
-              <option value="Zaun">Zaun</option>
-              <option value="The Void">The Void</option>
-              <option value="Bandle City">Bandle City</option>
-              <option value="Independent">Independent</option>
-            </select>
-            <input type="submit" value="Update">
-          </form>
+            {{champion.region}}
           </td>
           <td>
-          {{champion.champ_class}}
-          </td>
-          <td>
-          <form method="POST" action="./updatechamp_class" style="display: inline">
-            <input type="hidden" value="{{champion.name}}" name="oldchamp_class">
-            <select value="{{champion.champ_class}}" name="newchamp_class">
-              <option value="select" disabled>Select class:</option>              
-              <option value="Fighter" name="newchamp_class">Fighter</option>
-              <option value="Assassin" name="newchamp_class">Assassin</option>
-              <option value="Juggernaut" name="newchamp_class">Juggernaut</option>
-              <option value="Control Mage" name="newchamp_class">Control Mage</option>
-              <option value="Burst Mage" name="newchamp_class">Burst Mage</option>
-              <option value="Battlemage" name="newchamp_class">Battlemage</option>
-              <option value="Marksman" name="newchamp_class">Marksman</option>
-              <option value="Tank" name="newchamp_class">Tank</option>
-              <option value="Support" name="newchamp_class">Support</option>
-            </select>
-            <input type="submit" value="Update">
-          </form>
-          </td>
-          <td>
-            <form method="POST" action="./delete" style="display: inline">
-              <input type="hidden" value="{{champion.name}}" name="name">
-              <input type="submit" value="Delete">
-            </form>
+            {{champion.champ_class}}
           </td>
         </tr>
       {% endfor %}
