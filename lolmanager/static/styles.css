@@ -58,7 +58,7 @@ header {
 
 
 .active {
-background-color: #195190FF;
+background-color: #5CDB95;
     }
 
 
@@ -78,7 +78,7 @@ li a {
   
   /* Change the link color to #111 (black) on hover */
 li a:hover {
-background-color: #111;
+background-color: #5CDB95;
 }
 caption {
     font-family: "Oswald";
