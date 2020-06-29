@@ -1,3 +1,4 @@
+#Stephen Huang's project code for 12 Software Engineering and Computer Science.
 import os
 
 from flask import Flask 
@@ -7,11 +8,12 @@ from flask import redirect
 from flask_sqlalchemy import SQLAlchemy
 
 project_dir = os.path.dirname(os.path.abspath(__file__))
-database_file = "sqlite:///{}".format(os.path.join(project_dir, "leaguedatabase.db"))
-
+database_file = "sqlite:///{}".format(os.path.join(project_dir, "leaguedatabasev2.db")) 
+#To figure out where our project path is and set up a database file with its full path and the sqlite:/// prefix to tell SQLAlchemy which database engine we're using.
+#Tells our web application where our database will be stored.
 app = Flask(__name__, template_folder="templates")
 app.config["SQLALCHEMY_DATABASE_URI"] = database_file
-
+#Initialize a connection to the database and keep this in the db variable. We'll use this to interact with my database.
 db = SQLAlchemy(app)
 
 class Champion(db.Model):
@@ -25,6 +27,7 @@ class Champion(db.Model):
 class Post(db.Model):
     title = db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
     content = db.Column(db.String(80), unique=False, nullable=False)
+    rating = db.Column(db.String(80), unique=False, nullable=False)
     op = db.Column(db.String(80), unique=False, nullable=False)
 
     def __repr__(self):
@@ -58,7 +61,7 @@ def post():
     posts = None
     if request.form:  
         try:
-            post = Post(title=request.form.get("title"), content=request.form.get("content"), op=request.form.get("op"))
+            post = Post(title=request.form.get("title"), content=request.form.get("content"), rating=request.form.get("rating"), op=request.form.get("op"))
             db.session.add(post)
             db.session.commit()
         except Exception as e:
