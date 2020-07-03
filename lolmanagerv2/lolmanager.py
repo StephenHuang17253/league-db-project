@@ -56,7 +56,8 @@ def edit():
     champions = None
     champions = Champion.query.all()
     return render_template("edit.html", champions=champions)
-#Python coe for the feedback page.
+
+#Python cdoe for the feedback page.
 @app.route('/forums', methods=["GET", "POST"])
 def post(): 
     posts = None
@@ -70,6 +71,7 @@ def post():
             print(e)
     posts = Post.query.all()
     return render_template("forums.html", posts=posts)
+
 #This function def update() allows users to change any champions name.
 @app.route("/update", methods=["POST"])
 def update():
@@ -97,6 +99,7 @@ def updaterole():
         print("Couldn't update role")
         print(e)
     return redirect("/")
+
 #This function def updateregion() allows users to change any champion's region.
 @app.route("/updateregion", methods=["POST"])
 def updateregion():
@@ -110,6 +113,7 @@ def updateregion():
         print("Couldn't update region")
         print(e)
     return redirect("/")
+
 #This function def updatechamp_class() allows uers to change any champions classification.
 @app.route("/updatechamp_class", methods=["POST"])
 def updatechamp_class():
@@ -123,6 +127,7 @@ def updatechamp_class():
         print("Couldn't update class")
         print(e)
     return redirect("/")
+
 #This function def delete() allows users to delete a champion from the database.
 @app.route("/delete", methods=["POST"])
 def delete():
@@ -131,6 +136,7 @@ def delete():
     db.session.delete(champion) #Delete the champion with that name. 
     db.session.commit() #Commit this to the DB.
     return redirect("/") 
+    
 #This function def deletepost() allows for posts to be deleted.
 @app.route("/deletepost", methods=["POST"])
 def deletepost():
