@@ -136,7 +136,7 @@ def delete():
     db.session.delete(champion) #Delete the champion with that name. 
     db.session.commit() #Commit this to the DB.
     return redirect("/") 
-    
+
 #This function def deletepost() allows for posts to be deleted.
 @app.route("/deletepost", methods=["POST"])
 def deletepost():
