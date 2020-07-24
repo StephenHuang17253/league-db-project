@@ -36,7 +36,6 @@ class Post(db.Model):
 #app.route is used for mapping urls.
 @app.route('/', methods=["GET", "POST"])
 @app.route('/home', methods=["GET", "POST"])
-
 #Python code for the home page.
 def home(): 
     champions = None
@@ -50,6 +49,19 @@ def home():
             print(e)
     champions = Champion.query.all() #Queries all the champions so they can be displayed in a table in home.html. 
     return render_template("home.html", champions=champions)
+@app.route('/darkhome', methods=["GET", "POST"])
+def darkhome(): 
+    champions = None
+    if request.form:
+        try:
+            champion = Champion(name=request.form.get("name"), role=request.form.get("role"), region=request.form.get("region"), champ_class=request.form.get("champ_class"))
+            db.session.add(champion)
+            db.session.commit()
+        except Exception as e:
+            print("Failed to add champion")
+            print(e)
+    champions = Champion.query.all() #Queries all the champions so they can be displayed in a table in home.html. 
+    return render_template("darkhome.html", champions=champions)
 #Python code for the editor page.
 @app.route('/edit', methods=["GET", "POST"])
 def edit(): 
