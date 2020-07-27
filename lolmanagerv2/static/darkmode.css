@@ -15,6 +15,7 @@ ul {
     top: 0;
     width: 100%; 
     background-color: #243447	;
+    font-weight: 700;
     font-family: "Roboto";
   }
 
@@ -27,8 +28,7 @@ body {
     font-family: 'Roboto';
     color: #ffffff	    ; 
     background-color: rgb(21, 32, 43);
-
-    font-weight: bold;
+    font-weight: 500;
     white-space: nowrap;
     text-align: center;
 }
@@ -59,13 +59,13 @@ header {
 
 
 .active {
-background-color: rgb(29, 161, 242);
+background-color: #1f4068;
     }
 
 
 li  {
     float: left;
-    border-right: 1px solid #bbb;
+    border-right: 0px solid #bbb;
   }
 
 
@@ -79,7 +79,7 @@ li a {
   
   /* Change the link color to #111 (black) on hover */
 li a:hover {
-background-color: #5CDB95;
+background-color: #7289da;
 }
 caption {
     font-family: "Oswald";
@@ -101,7 +101,7 @@ table {
 th {
     font-family: "Oswald";
     text-align: left;
-    background: rgb(29, 161, 242);
+    background: #1f4068;
     color: white;
     padding: 10px;
     font-size: 135%;
@@ -115,13 +115,13 @@ tr {
     text-align: left;
 }
 
-tr:nth-child(even){
+tr:nth-child(odd){
     background: #243447	;
 }
 tr:hover {background-color: #7289da;}
 .w3-blue, .w3-hover-blue:hover {
     color: #ffffff!important;
-    background-color: #243447	!important;
+    background-color: #1f4068	!important;
 }
 h3 {
     font-weight: bold;

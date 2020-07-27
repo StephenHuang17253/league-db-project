@@ -68,7 +68,11 @@ def edit():
     champions = None
     champions = Champion.query.all()
     return render_template("edit.html", champions=champions)
-
+@app.route('/darkedit', methods=["GET", "POST"])
+def darkedit(): 
+    champions = None
+    champions = Champion.query.all()
+    return render_template("darkedit.html", champions=champions)
 #Python cdoe for the feedback page.
 @app.route('/forums', methods=["GET", "POST"])
 def post(): 
@@ -83,7 +87,19 @@ def post():
             print(e)
     posts = Post.query.all()
     return render_template("forums.html", posts=posts)
-
+@app.route('/darkforums', methods=["GET", "POST"])
+def darkpost(): 
+    posts = None
+    if request.form:  
+        try:
+            post = Post(title=request.form.get("title"), content=request.form.get("content"), rating=request.form.get("rating"), op=request.form.get("op"))
+            db.session.add(post)
+            db.session.commit()
+        except Exception as e:
+            print("Failed to add post")
+            print(e)
+    posts = Post.query.all()
+    return render_template("darkforums.html", posts=posts)
 #This function def update() allows users to change any champions name.
 @app.route("/update", methods=["POST"])
 def update():
@@ -97,6 +113,18 @@ def update():
         print("Couldn't update champion name")
         print(e)
     return redirect("/")
+@app.route("/updatedarkmode", methods=["POST"])
+def updatedarkmode():
+    try:
+        newname = request.form.get("newname") #First we request the new name.
+        oldname = request.form.get("oldname") #Then we look for the old name.
+        champion = Champion.query.filter_by(name=oldname).first() #Finds the first champion that matches the old name.
+        champion.name = newname #Replace that champions old name with the new one.
+        db.session.commit() #Commit to the DB.
+    except Exception as e:
+        print("Couldn't update champion name")
+        print(e)
+    return redirect("/darkedit")
 #This function def updaterole() allows users to change any champion's role. 
 @app.route("/updaterole", methods=["POST"])
 def updaterole():
@@ -111,7 +139,19 @@ def updaterole():
         print("Couldn't update role")
         print(e)
     return redirect("/")
-
+@app.route("/updateroledarkmode", methods=["POST"])
+def updateroledarkmode():
+    try:
+        newrole = request.form.get("newrole") #First we request the new role.
+        oldrole = request.form.get("oldrole") #Then we look for the old role.
+        champion = db.session.query(Champion).\
+            filter_by(name=oldrole).first()   #Finds the champion we're trying to change using their name                           
+        champion.role = newrole #Replace their current role with the new one.
+        db.session.commit() #Commmit to the DB.
+    except Exception as e:
+        print("Couldn't update role")
+        print(e)
+    return redirect("/darkedit")
 #This function def updateregion() allows users to change any champion's region.
 @app.route("/updateregion", methods=["POST"])
 def updateregion():
@@ -125,6 +165,19 @@ def updateregion():
         print("Couldn't update region")
         print(e)
     return redirect("/")
+@app.route("/updateregiondarkmode", methods=["POST"])
+def updateregiondarkmode():
+    try:
+        newregion = request.form.get("newregion") #First we request for their new region.
+        oldregion = request.form.get("oldregion") #Then we take their old region.
+        champion = Champion.query.filter_by(name=oldregion).first() #Find the name of the champion that we're changing the region of.
+        champion.region = newregion #Replace their current region with the newly chosen one.
+        db.session.commit() #Commit tthis change to the DB.
+    except Exception as e:
+        print("Couldn't update region")
+        print(e)
+    return redirect("/darkedit")
+
 
 #This function def updatechamp_class() allows uers to change any champions classification.
 @app.route("/updatechamp_class", methods=["POST"])
@@ -139,7 +192,18 @@ def updatechamp_class():
         print("Couldn't update class")
         print(e)
     return redirect("/")
-
+@app.route("/updatechamp_classdarkmode", methods=["POST"])
+def updatechamp_classdarkmode():
+    try:
+        newchamp_class = request.form.get("newchamp_class") #First we request for their new class.
+        oldchamp_class = request.form.get("oldchamp_class") #Then we take their old class.
+        champion = Champion.query.filter_by(name=oldchamp_class).first() #Find the name of the champion whose class is being updated.
+        champion.champ_class = newchamp_class #Updates their old class to the new one.
+        db.session.commit() #Commit this change to the DB.
+    except Exception as e:
+        print("Couldn't update class")
+        print(e)
+    return redirect("/darkedit")
 #This function def delete() allows users to delete a champion from the database.
 @app.route("/delete", methods=["POST"])
 def delete():
@@ -147,8 +211,14 @@ def delete():
     champion = Champion.query.filter_by(name=name).first() #Query the database using that name.
     db.session.delete(champion) #Delete the champion with that name. 
     db.session.commit() #Commit this to the DB.
-    return redirect("/") 
-
+    return redirect("/edit") 
+@app.route("/deletedarkmode", methods=["POST"])
+def deletedarkmode():
+    name = request.form.get("name") #First we request the name of the champion that's to be deleted.
+    champion = Champion.query.filter_by(name=name).first() #Query the database using that name.
+    db.session.delete(champion) #Delete the champion with that name. 
+    db.session.commit() #Commit this to the DB.
+    return redirect("/darkedit") 
 #This function def deletepost() allows for posts to be deleted.
 @app.route("/deletepost", methods=["POST"])
 def deletepost():
@@ -157,6 +227,14 @@ def deletepost():
     db.session.delete(post) #Delete the post with that title.
     db.session.commit() #Commit to the DB.
     return redirect("/forums")
+
+@app.route("/deletepostdarkmode", methods=["POST"])
+def deletepostdarkmode():
+    title = request.form.get("title") #First we request the title of the post that's to be deleted.
+    post = Post.query.filter_by(title=title).first() #Query the post database using that title.
+    db.session.delete(post) #Delete the post with that title.
+    db.session.commit() #Commit to the DB.
+    return redirect("/darkforums")
 
 if __name__ == "__main__":
     app.run(debug=True) #Runs the app.

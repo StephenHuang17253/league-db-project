@@ -28,7 +28,7 @@ body {
     color: #5383e8    ; 
     background-color: white;
 
-    font-weight: bold;
+    font-weight: 700;
     white-space: nowrap;
     text-align: center;
 }
@@ -59,13 +59,13 @@ header {
 
 
 .active {
-background-color: #7289da;
+background-color: rgb(29, 161, 242);
     }
 
 
 li  {
     float: left;
-    border-right: 1px solid #bbb;
+    border-right: 0px solid #bbb;
   }
 
 

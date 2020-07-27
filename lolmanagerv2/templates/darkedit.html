@@ -2,18 +2,18 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/darkmode.css">
     <title>League Champions Database</title>
     <header>League Champions DB</header>
     <subhead>by Stephen Huang</subhead>
   </head>
   <nav>  
     <ul>
-      <li><a href="/home">Home</a></li>
-      <li><a class="active" href="/edit">Editor</a></li>
-      <li><a href="/forums">Feedback</a></li>
-      <li><a href="/darkedit">Dark Mode</a></li>
-      <li style="float:right"><a class="active" href="/edit">Light Mode</a></li>
+      <li><a href="/darkhome">Home</a></li>
+      <li><a class="active" href="/darkedit">Editor</a></li>
+      <li><a href="/darkforums">Feedback</a></li>
+      <li><a href="/edit">Light Mode</a></li>
+      <li style="float:right"><a class="active" href="/darkhome">Dark Mode</a></li>
     </ul>
   </nav>
 
@@ -25,7 +25,7 @@
       </div>  
       
   <h2>CREATE NEW</h2>
-  <form method="POST" action="/">
+  <form method="POST" action="/darkhome">
     <label for="name">Champion name: </label>
     <input type="text" id="name" name="name">
     <select name="role">
@@ -84,7 +84,7 @@
             {{champion.name}}
           </td>
           <td>
-            <form method="POST" action="./update" style="display: inline">
+            <form method="POST" action="./updatedarkmode" style="display: inline">
               <input type="hidden" value="{{champion.name}}" name="oldname">
               <input type="text" value="{{champion.name}}" name="newname">
               <input type="submit" value="Update">
@@ -94,7 +94,7 @@
             {{champion.role}}
         </td>
           <td>
-            <form method="POST" action="./updaterole" style="display: inline">
+            <form method="POST" action="./updateroledarkmode" style="display: inline">
               <input type="hidden" value="{{champion.name}}" name="oldrole">
               <select value="{{champion.role}}" name="newrole">
                 <option value="select" disabled>Select role:</option>              
@@ -111,7 +111,7 @@
         {{champion.region}}
         </td>
         <td>
-          <form method="POST" action="./updateregion" style="display: inline">
+          <form method="POST" action="./updateregiondarkmode" style="display: inline">
             <input type="hidden" value="{{champion.name}}" name="oldregion">
             <select value="{{champion.region}}" name="newregion">
               <option value="select" disabled>Select region:</option>              
@@ -136,7 +136,7 @@
           {{champion.champ_class}}
           </td>
           <td>
-          <form method="POST" action="./updatechamp_class" style="display: inline">
+          <form method="POST" action="./updatechamp_classdarkmode" style="display: inline">
             <input type="hidden" value="{{champion.name}}" name="oldchamp_class">
             <select value="{{champion.champ_class}}" name="newchamp_class">
               <option value="select" disabled>Select class:</option>              
@@ -154,7 +154,7 @@
           </form>
           </td>
           <td>
-            <form method="POST" action="./delete" style="display: inline">
+            <form method="POST" action="./deletedarkmode" style="display: inline">
               <input type="hidden" value="{{champion.name}}" name="name">
               <input type="submit" value="Delete">
             </form>
