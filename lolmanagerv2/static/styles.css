@@ -39,8 +39,22 @@ h2 {
     padding-top: 15px;
 }
 
-
-
+.button {
+    background-color: #5383e8; /* Blue */
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: 2px solid #1f4068;
+    transition-duration: 0.25  s;
+  }
+.button:hover {
+    background-color: #5CDB95; /* Green */
+    color: white;
+}
 h1 {
     font-family: "Oswald";
     color: #5383e8; 
@@ -59,8 +73,8 @@ header {
 
 
 .active {
-background-color: rgb(29, 161, 242);
-    }
+border: 2px solid #5CDB95;
+}
 
 
 li  {
@@ -75,6 +89,7 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    border-radius: 12px;
   }
   
   /* Change the link color to #111 (black) on hover */

@@ -43,7 +43,7 @@
     </select>
     <label for="op">Your name: </label>
     <input type="text" id="op" name="op" maxlength="20">
-    <input type="submit" value="Submit Post">
+    <input type="submit" class="button" value="Submit Post">
   </form>
     <table> 
       <caption>All posts</caption>
@@ -70,7 +70,7 @@
           <td>
             <form method="POST" action="./deletepostdarkmode" style="display: inline">
               <input type="hidden" value="{{post.title}}" name="title">
-              <input type="submit" value="Delete">
+              <input type="submit" class="button" value="Delete">
             </form>
           </td>
         </tr>

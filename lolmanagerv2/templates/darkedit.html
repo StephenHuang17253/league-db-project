@@ -65,7 +65,7 @@
       <option value="Tank">Tank</option>
       <option value="Support">Support</option>
     </select>
-    <input type="submit" value="Add">
+    <input type="submit" class="button" value="Add">
   </form>
     
     <table> 
@@ -87,7 +87,7 @@
             <form method="POST" action="./updatedarkmode" style="display: inline">
               <input type="hidden" value="{{champion.name}}" name="oldname">
               <input type="text" value="{{champion.name}}" name="newname">
-              <input type="submit" value="Update">
+              <input type="submit" class="button" value="Update">
             </form>
           </td>
         <td>
@@ -104,7 +104,7 @@
                 <option value="ADC">ADC</option>
                 <option value="Support">Support</option>
               </select>
-              <input type="submit" value="Update">
+              <input type="submit" class="button" value="Update">
             </form>    
           </td>
           <td>
@@ -129,7 +129,7 @@
               <option value="Bandle City">Bandle City</option>
               <option value="Independent">Independent</option>
             </select>
-            <input type="submit" value="Update">
+            <input type="submit" class="button" value="Update">
           </form>
           </td>
           <td>
@@ -156,7 +156,7 @@
           <td>
             <form method="POST" action="./deletedarkmode" style="display: inline">
               <input type="hidden" value="{{champion.name}}" name="name">
-              <input type="submit" value="Delete">
+              <input type="submit" class="button" value="Delete">
             </form>
           </td>
         </tr>
