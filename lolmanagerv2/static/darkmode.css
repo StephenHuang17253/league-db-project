@@ -51,7 +51,7 @@ h2 {
     border: 1px solid rgb(29, 161, 242);
     transition-duration: 0.25  s;
   }
-.button:hover {
+.button:hover { 
     background-color: #5CDB95; /* Green */
     color: white;
 }
