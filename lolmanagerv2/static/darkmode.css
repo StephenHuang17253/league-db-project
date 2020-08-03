@@ -60,10 +60,18 @@ select {
     padding: 8px 10px;
     border: none;
     border: 2px solid rgb(29, 161, 242);
-    border-radius: 6px;
+    border-radius: 2px;
     background-color: rgb(21, 32, 43);
     color: #f1f1f1;
   }
+input {
+    padding: 8px 10px;
+    border: none;
+    border: 2px solid rgb(29, 161, 242);
+    border-radius: 2px;
+    background-color: rgb(21, 32, 43);
+    color: #f1f1f1;
+}
 
     h1 {
     font-family: "Oswald";
