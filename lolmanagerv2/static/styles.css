@@ -48,7 +48,7 @@ h2 {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border: 2px solid #1f4068;
+    border: 1px solid #1f4068;
     transition-duration: 0.25  s;
   }
 .button:hover {
@@ -61,7 +61,7 @@ h2 {
 select {
     padding: 8px 10px;
     border: none;
-    border: 2px solid #1f4068;
+    border: 1px solid #1f4068;
     border-radius: 2px;
     background-color: #5383e8;
     color: #ffffff;
@@ -70,10 +70,10 @@ select {
 input {
     padding: 8px 10px;
     border: none;
-    border: 2px solid rgb(29, 161, 242);
+    border: 1px solid rgb(29, 161, 242);
     border-radius: 2px;
     background-color: #5383e8;
-    border: 2px solid #1f4068;
+    border: 1px solid #1f4068;
     color: #f1f1f1;
 }
 

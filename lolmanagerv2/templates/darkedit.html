@@ -29,7 +29,7 @@
     <label for="name">Champion name: </label>
     <input type="text" id="name" name="name">
     <select name="role">
-      <option value="select" disabled>Select role:</option>
+      <option value="select" disabled selected>Select role:</option>
       <option value="Top">Top</option>
       <option value="Jungle">Jungle</option>
       <option value="Mid">Mid</option>
@@ -37,7 +37,7 @@
       <option value="Support">Support</option>
     </select>
     <select name="region">
-      <option value="select" disabled>Select region:</option>
+      <option value="select" disabled selected>Select region:</option>
       <option value="Shurima">Shurima</option>
       <option value="Demacia">Demacia</option>
       <option value="Noxus">Noxus</option>
@@ -54,7 +54,7 @@
       <option value="Independent">Independent</option>
     </select>
     <select name="champ_class">
-      <option value="select" disabled>Select class:</option>   
+      <option value="select" disabled selected>Select class:</option>   
       <option value="Fighter">Fighter</option>
       <option value="Assassin">Assassin</option>
       <option value="Juggernaut">Juggernaut</option>
@@ -97,7 +97,7 @@
             <form method="POST" action="./updateroledarkmode" style="display: inline">
               <input type="hidden" value="{{champion.name}}" name="oldrole">
               <select value="{{champion.role}}" name="newrole">
-                <option value="select" disabled>Select role:</option>              
+                <option value="select" disabled selected>Select role:</option>              
                 <option value="Top">Top</option>
                 <option value="Jungle">Jungle</option>
                 <option value="Mid">Mid</option>
@@ -114,7 +114,7 @@
           <form method="POST" action="./updateregiondarkmode" style="display: inline">
             <input type="hidden" value="{{champion.name}}" name="oldregion">
             <select value="{{champion.region}}" name="newregion">
-              <option value="select" disabled>Select region:</option>              
+              <option value="select" disabled selected>Select region:</option>              
               <option value="Shurima">Shurima</option>
               <option value="Demacia">Demacia</option>
               <option value="Noxus">Noxus</option>
@@ -139,7 +139,7 @@
           <form method="POST" action="./updatechamp_classdarkmode" style="display: inline">
             <input type="hidden" value="{{champion.name}}" name="oldchamp_class">
             <select value="{{champion.champ_class}}" name="newchamp_class">
-              <option value="select" disabled>Select class:</option>              
+              <option value="select" disabled selected>Select class:</option>              
               <option value="Fighter" name="newchamp_class">Fighter</option>
               <option value="Assassin" name="newchamp_class">Assassin</option>
               <option value="Juggernaut" name="newchamp_class">Juggernaut</option>
