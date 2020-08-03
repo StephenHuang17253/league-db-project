@@ -17,6 +17,7 @@ ul {
     background-color: #243447	;
     font-weight: 700;
     font-family: "Roboto";
+    border-radius: 12px;
   }
 
 div {
@@ -48,14 +49,22 @@ h2 {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border: 2px solid #1f4068;
+    border: 2px solid rgb(29, 161, 242);
     transition-duration: 0.25  s;
   }
 .button:hover {
-    background-color: rgb(29, 161, 242); /* Green */
+    background-color: #41B3A3; /* Green */
     color: white;
-
 }
+select {
+    padding: 8px 10px;
+    border: none;
+    border: 2px solid rgb(29, 161, 242);
+    border-radius: 6px;
+    background-color: rgb(21, 32, 43);
+    color: #f1f1f1;
+  }
+
     h1 {
     font-family: "Oswald";
     color: #ffffff	; 
@@ -138,8 +147,7 @@ tr:nth-child(odd){
     background: #243447	;
 }
 tr:hover {
-    border: 2px solid rgb(29, 161, 242);
-    border-radius: 12px;
+    background-color: rgb(29, 161, 242);
 }
 .w3-blue, .w3-hover-blue:hover {
     color: #ffffff!important;
