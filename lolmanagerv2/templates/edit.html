@@ -25,7 +25,7 @@
       </div>  
       
   <h2>CREATE NEW</h2>
-  <form method="POST" action="/">
+  <form method="POST" action="/" autocomplete="off">
     <label for="name">Champion name: </label>
     <input type="text" id="name" name="name">
     <select name="role">
@@ -84,7 +84,7 @@
             {{champion.name}}
           </td>
           <td>
-            <form method="POST" action="./update" style="display: inline">
+            <form method="POST" action="./update" style="display: inline" autocomplete="off">
               <input type="hidden" value="{{champion.name}}" name="oldname">
               <input type="text" value="{{champion.name}}" name="newname">
               <input type="submit" class="button" value="Update">
@@ -94,7 +94,7 @@
             {{champion.role}}
         </td>
           <td>
-            <form method="POST" action="./updaterole" style="display: inline">
+            <form method="POST" action="./updaterole" style="display: inline" autocomplete="off">
               <input type="hidden" value="{{champion.name}}" name="oldrole">
               <select value="{{champion.role}}" name="newrole">
                 <option value="select" disabled>Select role:</option>              
@@ -111,7 +111,7 @@
         {{champion.region}}
         </td>
         <td>
-          <form method="POST" action="./updateregion" style="display: inline">
+          <form method="POST" action="./updateregion" style="display: inline" autocomplete="off">
             <input type="hidden" value="{{champion.name}}" name="oldregion">
             <select value="{{champion.region}}" name="newregion">
               <option value="select" disabled>Select region:</option>              
@@ -136,7 +136,7 @@
           {{champion.champ_class}}
           </td>
           <td>
-          <form method="POST" action="./updatechamp_class" style="display: inline">
+          <form method="POST" action="./updatechamp_class" style="display: inline" autocomplete="off">
             <input type="hidden" value="{{champion.name}}" name="oldchamp_class">
             <select value="{{champion.champ_class}}" name="newchamp_class">
               <option value="select" disabled>Select class:</option>              

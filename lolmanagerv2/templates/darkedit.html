@@ -25,7 +25,7 @@
       </div>  
       
   <h2>CREATE NEW</h2>
-  <form method="POST" action="/darkhome">
+  <form method="POST" action="/darkhome" autocomplete="off">
     <label for="name">Champion name: </label>
     <input type="text" id="name" name="name">
     <select name="role">
@@ -84,7 +84,7 @@
             {{champion.name}}
           </td>
           <td>
-            <form method="POST" action="./updatedarkmode" style="display: inline">
+            <form method="POST" action="./updatedarkmode" style="display: inline" autocomplete="off">
               <input type="hidden" value="{{champion.name}}" name="oldname">
               <input type="text" value="{{champion.name}}" name="newname">
               <input type="submit" class="button" value="Update">

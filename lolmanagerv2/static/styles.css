@@ -43,7 +43,7 @@ h2 {
     background-color: #5383e8; /* Blue */
     border: none;
     color: white;
-    padding: 5px 12px;
+    padding: 6px 12px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -55,6 +55,9 @@ h2 {
     background-color: #5CDB95; /* Green */
     color: white;
 }
+.button[value=Delete]:hover{
+    background-color: red; /* Red */
+}
 select {
     padding: 8px 10px;
     border: none;
@@ -63,6 +66,18 @@ select {
     background-color: #5383e8;
     color: #ffffff;
   }
+
+input {
+    padding: 8px 10px;
+    border: none;
+    border: 2px solid rgb(29, 161, 242);
+    border-radius: 2px;
+    background-color: #5383e8;
+    border: 2px solid #1f4068;
+    color: #f1f1f1;
+}
+
+
 h1 {
     font-family: "Oswald";
     color: #5383e8; 
