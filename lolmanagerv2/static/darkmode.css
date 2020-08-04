@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Avenir&display=swap');
 
 ul {
     list-style-type: none;
@@ -19,11 +20,6 @@ ul {
     font-family: "Roboto";
     border-radius: 12px;
   }
-
-div {
-    padding: 0px !important;
-}
-
 
 body {
     font-family: 'Roboto';
@@ -43,28 +39,42 @@ h2 {
 .button {
     background-color: rgb(21, 32, 43); /* Dark Backgrouund */
     border: none;
-    padding: 6px 12px;
+    padding: 7px 13px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     border: 1px solid rgb(29, 161, 242);
     transition-duration: 0.25  s;
+    cursor: pointer;
   }
 .button:hover { 
-    background-color: #5CDB95; /* Green */
+    background-color: #5CDB95; /* OP.GG Blue */
     color: white;
 }
 .button[value=Delete]:hover{
     background-color: red; /* Red */
 }
-select {
+textarea {
     padding: 8px 10px;
+    display: inline-block;
+    resize: none;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 2px;
+    background-color: rgb(21, 32, 43);
+    border: 1px solid rgb(29, 161, 242);
+    color: #f1f1f1;
+  }
+select {
+    padding: 9px 11px;
     border: none;
     border: 1px solid rgb(29, 161, 242);
     border-radius: 2px;
     background-color: rgb(21, 32, 43);
+    cursor: pointer;
     color: #f1f1f1;
+    display: inline-block;
   }
 
 input {
@@ -74,8 +84,12 @@ input {
     background-color: rgb(21, 32, 43);
     border: 1px solid rgb(29, 161, 242);
     color: #f1f1f1;
+    display: inline-block;
 }
-
+div {
+    padding: 20px;
+    border-radius: 5px;
+}
 h1 {
     font-family: "Oswald";
     color: #ffffff	; 
@@ -94,7 +108,7 @@ header {
 
 
 .active {
-border: 2px solid rgb(29, 161, 242); /* Blue */
+border: 2px solid #5383e8; /* Blue */
 
     }
 
@@ -117,7 +131,7 @@ li a {
   
   /* Change the link color to #111 (black) on hover */
 li a:hover {
-background-color: rgb(29, 161, 242);
+background-color: #5383e8;
 
 }
 caption {
@@ -158,7 +172,7 @@ tr:nth-child(odd){
     background: #243447	;
 }
 tr:hover {
-    border: 2px solid rgb(29, 161, 242);
+    background-color: #5383e8;
 }
 .w3-blue, .w3-hover-blue:hover {
     color: #ffffff!important;
@@ -186,5 +200,4 @@ h3 {
 #5383e8 - OP.GG Blue
 
 
-rgb(55, 55, 55) - old background
 */ 
