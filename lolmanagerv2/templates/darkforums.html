@@ -22,14 +22,13 @@
         <p>This page allows you to make reviews and give feedback.</p>
       </div> 
   <h2>CREATE POST</h2>
-  <div>
+  <div class="container">
   <form method="POST" action="/darkforums" autocomplete="off">
     <label for="title">Title: </label>
-    <input type="text" id="title" name="title" maxlength="20">
+    <input type="text" id="title" name="title" maxlength="20" placeholder="Write your title here...">
 
     <label for="content">Content: </label>
-    <textarea id="content" name="content" rows ="4" cols="50">
-    </textarea>
+    <textarea id="content" name="content" rows ="4" cols="50" placeholder="Write your post here..."></textarea>
     
     <label for="rating">Rate The Website</label>
     <select name="rating" id="rating">
@@ -47,7 +46,7 @@
     </select>
     
     <label for="op">Your name: </label>
-    <input type="text" id="op" name="op" maxlength="20">
+    <input type="text" id="op" name="op" maxlength="20" placeholder="Write your name here...">
     <input type="submit" class="button" value="Submit Post">
   </form>
   </div>

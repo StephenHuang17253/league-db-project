@@ -39,7 +39,7 @@ h2 {
 .button {
     background-color: rgb(21, 32, 43); /* Dark Backgrouund */
     border: none;
-    padding: 7px 13px;
+    padding: 7px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -56,8 +56,9 @@ h2 {
     background-color: red; /* Red */
 }
 textarea {
-    padding: 8px 10px;
-    display: inline-block;
+    width: 100%;
+    padding: 8px 20px;
+    display: block;
     resize: none;
     box-sizing: border-box;
     border: none;
@@ -65,30 +66,39 @@ textarea {
     background-color: rgb(21, 32, 43);
     border: 1px solid rgb(29, 161, 242);
     color: #f1f1f1;
+    margin: 8px 0;
   }
 select {
-    padding: 9px 11px;
+    width: 100%;
+    padding: 9px 20px;
     border: none;
     border: 1px solid rgb(29, 161, 242);
     border-radius: 2px;
     background-color: rgb(21, 32, 43);
     cursor: pointer;
     color: #f1f1f1;
-    display: inline-block;
+    display: block;
+    box-sizing: border-box;
+    margin: 8px 0;
   }
 
 input {
+    width: 100%;
     padding: 8px 10px;
     border: none;
     border-radius: 2px;
     background-color: rgb(21, 32, 43);
     border: 1px solid rgb(29, 161, 242);
-    color: #f1f1f1;
-    display: inline-block;
+    color: #f1f1f1;    
+    display: block;
+    box-sizing: border-box;
+    margin: 8px 0;
 }
-div {
-    padding: 20px;
+div.container {
+    padding: 10px;
     border-radius: 5px;
+    margin: auto;
+    width: 50%;
 }
 h1 {
     font-family: "Oswald";

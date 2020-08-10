@@ -38,45 +38,74 @@ h2 {
     font-weight: bold;
     padding-top: 15px;
 }
-
 .button {
     background-color: #5383e8; /* Blue */
     border: none;
-    color: white;
-    padding: 6px 12px;
+    padding: 7px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     border: 1px solid #1f4068;
     transition-duration: 0.25  s;
+    cursor: pointer;
   }
-.button:hover {
-    background-color: #5CDB95; /* Green */
+.button:hover { 
+    background-color: #5CDB95; /* OP.GG Blue */
     color: white;
 }
 .button[value=Delete]:hover{
     background-color: red; /* Red */
 }
-select {
-    padding: 8px 10px;
+textarea {
+    width: 100%;
+    padding: 8px 20px;
+    display: block;
+    resize: none;
+    box-sizing: border-box;
     border: none;
-    border: 1px solid #1f4068;
-    border-radius: 2px;
-    background-color: #5383e8;
-    color: #ffffff;
-  }
-
-input {
-    padding: 8px 10px;
-    border: none;
-    border: 1px solid rgb(29, 161, 242);
     border-radius: 2px;
     background-color: #5383e8;
     border: 1px solid #1f4068;
     color: #f1f1f1;
-}
+    margin: 8px 0;
+  }
+select {
+    width: 100%;
+    padding: 9px 20px;
+    border: none;
+    border: 1px solid #1f4068;
+    border-radius: 2px;
+    background-color: #5383e8;  
+    cursor: pointer;
+    color: #f1f1f1;
+    display: block;
+    box-sizing: border-box;
+    margin: 8px 0;
+  }
 
+input {
+    width: 100%;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 2px;
+    background-color: #5383e8;
+    border: 1px solid #1f4068;
+    color: #f1f1f1;    
+    display: block;
+    box-sizing: border-box;
+    margin: 8px 0;
+}
+div.container {
+    padding: 10px;
+    border-radius: 5px;
+    margin: auto;
+    width: 50%;
+}
+::placeholder {
+    color: white;
+    opacity: 1;
+}
 
 h1 {
     font-family: "Oswald";
