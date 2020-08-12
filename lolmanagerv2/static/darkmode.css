@@ -57,7 +57,7 @@ h2 {
 }
 textarea {
     width: 100%;
-    padding: 8px 20px;
+    padding: 8px 10px;
     display: block;
     resize: none;
     box-sizing: border-box;
@@ -70,7 +70,7 @@ textarea {
   }
 select {
     width: 100%;
-    padding: 9px 20px;
+    padding: 9px 10px;
     border: none;
     border: 1px solid rgb(29, 161, 242);
     border-radius: 2px;
