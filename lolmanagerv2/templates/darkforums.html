@@ -52,7 +52,8 @@
     <input type="submit" class="button" value="Submit Post">
   </form>
   </div>
-    <table> 
+  <div style="overflow-x:auto;">
+    <table > 
       <caption>All posts</caption>
           <tr>
             <th colspan = 1>Title</th>
@@ -65,7 +66,7 @@
           <td>
             {{post.title}}
           </td>  
-          <td>
+          <td class="Content" style="white-space:pre-wrap; word-wrap:break-word">
             {{post.content}}
           </td>
           <td>
@@ -83,5 +84,6 @@
         </tr>
       {% endfor %}
     </table>
+    </div>
   </body>
 </html>

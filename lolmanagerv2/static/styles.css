@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
+/* Navbar */
 ul {
     list-style-type: none;
     margin: 0;
@@ -17,17 +17,11 @@ ul {
     background-color: #5383e8;
     font-family: "Roboto";
   }
-
-div {
-    padding: 0px !important;
-}
-
-
+/* Changes the font and colour of body text to desired values. */
 body {
     font-family: 'Roboto';
     color: #5383e8    ; 
     background-color: white;
-
     font-weight: 700;
     white-space: nowrap;
     text-align: center;
@@ -38,6 +32,7 @@ h2 {
     font-weight: bold;
     padding-top: 15px;
 }
+/* Button styling */
 .button {
     background-color: #5383e8; /* Blue */
     border: none;
@@ -70,6 +65,7 @@ textarea {
     color: #f1f1f1;
     margin: 8px 0;
   }
+/* Select option styling */
 select {
     width: 100%;
     padding: 9px 10px;
@@ -84,6 +80,8 @@ select {
     margin: 8px 0;
   }
 
+/* Input styling */
+
 input {
     width: 100%;
     padding: 8px 10px;
@@ -96,12 +94,14 @@ input {
     box-sizing: border-box;
     margin: 8px 0;
 }
+/* Div container for stacked forms. */
 div.container {
     padding: 10px;
     border-radius: 5px;
     margin: auto;
     width: 50%;
 }
+/* placeholder text for input forms */
 ::placeholder {
     color: white;
     opacity: 1;
@@ -113,7 +113,7 @@ h1 {
     font-weight: bold; 
     padding-bottom: 10px;
 }
-
+/* LEAGUE CHAMPIONS DB styling */
 header {
     padding-top: 110px;   
     text-align: center;
@@ -122,8 +122,7 @@ header {
     font-size: 560%;
     font-weight: bold;
 }
-
-
+/* Highlights the page you're on in the navbar. */
 .active {
 border: 2px solid #5CDB95;
 }
