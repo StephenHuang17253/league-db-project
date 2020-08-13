@@ -19,6 +19,7 @@ ul {
     font-weight: 700;
     font-family: "Roboto";
     border-radius: 12px;
+    text-align: center;
   }
 /* Changes the font and colour of body text to desired values. */
 body {
@@ -132,27 +133,28 @@ li  {
 
 
 li a {
-    display: block;
+    display: inline-block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     border-radius: 12px;
     transition-duration: 0.25  s;
+    text-align: center;
   }
   
-  /* Change the link color to #111 (black) on hover */
+/* Changes the link color to blue on hover */
 li a:hover {
 background-color: #5383e8;
-
 }
+/*Styling for captions mostly used for tables.*/
 caption {
     font-family: "Oswald";
     font-weight: bold;
     font-size: 30px;
     padding: 20px;
 }
-
+/*Table Styling*/
 table#create {
     float: center;
     width: 100%;
@@ -186,6 +188,7 @@ tr:nth-child(odd){
 tr:hover {
     background-color: #5383e8;
 }
+/*End of Table Styling*/
 .w3-blue, .w3-hover-blue:hover {
     color: #ffffff!important;
     background-color: #1f4068	!important;

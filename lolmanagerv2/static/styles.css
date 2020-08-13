@@ -186,7 +186,7 @@ tr:nth-child(odd){
 }
 tr:hover {background-color: #5CDB95;}
 .w3-blue, .w3-hover-blue:hover {
-    color: #fff!important;
+    color: #fff !important;
     background-color: #5383e8!important;
 }
 h3 {
