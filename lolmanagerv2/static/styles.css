@@ -143,17 +143,18 @@ li a {
     border-radius: 12px;
   }
   
-  /* Change the link color to #111 (black) on hover */
+  /* Change the link color to green on hover */
 li a:hover {
 background-color: #5CDB95;
 }
+/*Styling for captions mostly used for tables.*/
 caption {
     font-family: "Oswald";
     font-weight: bold;
     font-size: 30px;
     padding: 20px;
 }
-
+/*Table Styling*/
 table#create {
     float: center;
     width: 100%;
@@ -185,6 +186,7 @@ tr:nth-child(odd){
     background: #f2f2f2;
 }
 tr:hover {background-color: #5CDB95;}
+/*End of Table Styling*/
 .w3-blue, .w3-hover-blue:hover {
     color: #fff !important;
     background-color: #5383e8!important;
