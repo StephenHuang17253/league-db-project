@@ -22,7 +22,15 @@
         <h3>DB EDITOR</h3>
         <p>This page allows you to make changes to the League Champions DB.</p>
       </div>  
-      
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">SEARCH DATABASE</button>
+        <div id="myDropdown" class="dropdown-content">
+        <input style="width:100%"type="text" id="searchName" onkeyup="searchName()" placeholder="Search for names...">
+        <input style="width:100%"type="text" id="searchRole" onkeyup="searchRole()" placeholder="Search for roles...">  
+        <input style="width:100%"type="text" id="searchRegion" onkeyup="searchRegion()" placeholder="Search for regions...">  
+        <input style="width:100%"type="text" id="searchClass"" onkeyup="searchClass()" placeholder="Search for classes...">  
+        </div>
+      </div>
   <h2>CREATE NEW</h2>
   <div class="container">
   <form method="POST" action="/darkhome" autocomplete="off">
@@ -70,7 +78,6 @@
     
     <table id="champions"> 
       <caption>UPDATE / DELETE</caption>
-      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">  
           <tr>
             <th colspan = 2>Name</th>
             <th colspan = 2>Role</th>
@@ -163,10 +170,15 @@
       {% endfor %}
     </table>
     <script>
-      function myFunction() {
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+  </script>
+    <script>
+      function searchName() {
         // Declare variables
         var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("myInput");
+        input = document.getElementById("searchName");
         filter = input.value.toUpperCase();
         table = document.getElementById("champions");
         tr = table.getElementsByTagName("tr");
@@ -185,6 +197,75 @@
         }
       }
       </script>
+      <script>
+        function searchRole() {
+          // Declare variables
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("searchRole");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("champions");
+          tr = table.getElementsByTagName("tr");
+        
+          // Loop through all table rows, and hide those who don't match the search query
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }
+          }
+        }
+        </script>
+          <script>
+    function searchRegion() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("searchRegion");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("champions");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[2];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    </script>
+  <script>
+    function searchClass() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("searchClass");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("champions");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[3];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    </script>
   </body>
 </html>
 

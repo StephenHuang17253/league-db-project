@@ -197,7 +197,6 @@ h3 {
     font-weight: bold;
     font-family: "Oswald";
 }
-
 #myInput {
     background-image: url('/css/searchicon.png'); /* Add a search icon to input */
     background-position: 10px 12px; /* Position the search icon */
@@ -208,8 +207,47 @@ h3 {
     border: 1px solid #ddd; /* Add a grey border */
     margin-bottom: 12px; /* Add some space below the input */
   }
+ 
+  /* Dropdown Button */
+.dropbtn {
+    width: 100%;
+    background-color: rgb(21, 32, 43);
+    border: 1px solid rgb(29, 161, 242);
+    color: white;
+    padding: 10px;
+    font-family: "Oswald";
+    font-size: 24px;
+    font-weight: bold%;
+    cursor: pointer;
+  }
   
-
+  /* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #5CDB95;
+  }
+/* Change color on hover */
+#searchName:focus {background-color: #1f4068}
+#searchRole:focus {background-color: #1f4068}
+#searchRegion:focus {background-color: #1f4068}
+#searchClass:focus {background-color: #1f4068}
+  /* The container <div> - needed to position the dropdown content */
+.dropdown {
+    width: 50%;
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: rgb(21, 32, 43);
+    border: 0px solid rgb(29, 161, 242);
+    z-index: 1;
+  }
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
 /*
 #41B3A3 - Blue-Green
 #195190FF - Turkish Sea Blue

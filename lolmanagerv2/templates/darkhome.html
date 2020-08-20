@@ -23,11 +23,14 @@
   </div> 
     <table id="champions"> 
       <caption>All Champions as of Season 10</caption>
-      <div class=container>
-      <input style="width:100%"type="text" id="searchName" onkeyup="searchName()" placeholder="Search for names...">
-      <input style="width:100%"type="text" id="searchRole" onkeyup="searchRole()" placeholder="Search for roles...">  
-      <input style="width:100%"type="text" id="searchRegion" onkeyup="searchRegion()" placeholder="Search for regions...">  
-      <input style="width:100%"type="text" id="searchClass"" onkeyup="searchClass()" placeholder="Search for classes...">  
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">SEARCH DATABASE</button>
+        <div id="myDropdown" class="dropdown-content">
+        <input style="width:100%"type="text" id="searchName" onkeyup="searchName()" placeholder="Search for names...">
+        <input style="width:100%"type="text" id="searchRole" onkeyup="searchRole()" placeholder="Search for roles...">  
+        <input style="width:100%"type="text" id="searchRegion" onkeyup="searchRegion()" placeholder="Search for regions...">  
+        <input style="width:100%"type="text" id="searchClass"" onkeyup="searchClass()" placeholder="Search for classes...">  
+        </div>
       </div>
           <tr>
             <th colspan = 1>Name</th>
@@ -52,6 +55,11 @@
         </tr>
       {% endfor %}
     </table>
+    <script>
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+    </script>
     <script>
       function searchName() {
         // Declare variables
