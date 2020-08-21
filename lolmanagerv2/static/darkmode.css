@@ -197,17 +197,7 @@ h3 {
     font-weight: bold;
     font-family: "Oswald";
 }
-#myInput {
-    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
-    background-position: 10px 12px; /* Position the search icon */
-    background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 100%; /* Full-width */
-    font-size: 16px; /* Increase font-size */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    border: 1px solid #ddd; /* Add a grey border */
-    margin-bottom: 12px; /* Add some space below the input */
-  }
- 
+
   /* Dropdown Button */
 .dropbtn {
     width: 100%;
@@ -223,7 +213,7 @@ h3 {
   
   /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-    background-color: #5CDB95;
+    background-color: #1f4068;
   }
 /* Change color on hover */
 #searchName:focus {background-color: #1f4068}
@@ -232,6 +222,7 @@ h3 {
 #searchClass:focus {background-color: #1f4068}
   /* The container <div> - needed to position the dropdown content */
 .dropdown {
+    margin: auto;
     width: 50%;
     position: relative;
     display: inline-block;
@@ -250,18 +241,6 @@ h3 {
 .show {display:block;}
 /*
 #41B3A3 - Blue-Green
-#195190FF - Turkish Sea Blue
-#C38D9E - Purple-Pink
-#E8A87C - Subtle Orange
-#05386B - Imperial Blue
-#5CDB95 - Emerald Green
-#379683 - Dark Emerald Green
-#FC766AFF - Living Coral
-#5B84B1FF - Pacific Coast
-#ffffffffffffFF - White
-#000000ff - Black
-#2D2926FF - Grey Black
-#7851a9 - Kelso Hoodie Purple
 #5383e8 - OP.GG Blue
 
 

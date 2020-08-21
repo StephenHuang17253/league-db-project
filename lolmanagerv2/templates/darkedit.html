@@ -22,15 +22,15 @@
         <h3>DB EDITOR</h3>
         <p>This page allows you to make changes to the League Champions DB.</p>
       </div>  
-      <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">SEARCH DATABASE</button>
-        <div id="myDropdown" class="dropdown-content">
-        <input style="width:100%"type="text" id="searchName" onkeyup="searchName()" placeholder="Search for names...">
-        <input style="width:100%"type="text" id="searchRole" onkeyup="searchRole()" placeholder="Search for roles...">  
-        <input style="width:100%"type="text" id="searchRegion" onkeyup="searchRegion()" placeholder="Search for regions...">  
-        <input style="width:100%"type="text" id="searchClass"" onkeyup="searchClass()" placeholder="Search for classes...">  
-        </div>
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">SEARCH DATABASE</button>
+      <div id="myDropdown" class="dropdown-content">
+      <input style="width:100%"type="text" id="searchName" onkeyup="searchName()" placeholder="Search for names...">
+      <input style="width:100%"type="text" id="searchRole" onkeyup="searchRole()" placeholder="Search for roles...">  
+      <input style="width:100%"type="text" id="searchRegion" onkeyup="searchRegion()" placeholder="Search for regions...">  
+      <input style="width:100%"type="text" id="searchClass" onkeyup="searchClass()" placeholder="Search for classes...">  
       </div>
+    </div>
   <h2>CREATE NEW</h2>
   <div class="container">
   <form method="POST" action="/darkhome" autocomplete="off">
@@ -76,7 +76,7 @@
   </form>
   </div>
     
-    <table id="champions"> 
+    <table id="champions2"> 
       <caption>UPDATE / DELETE</caption>
           <tr>
             <th colspan = 2>Name</th>
@@ -147,15 +147,15 @@
             <input type="hidden" value="{{champion.name}}" name="oldchamp_class">
             <select value="{{champion.champ_class}}" name="newchamp_class">
               <option value="select" disabled selected>Select class:</option>              
-              <option value="Fighter" name="newchamp_class">Fighter</option>
-              <option value="Assassin" name="newchamp_class">Assassin</option>
-              <option value="Juggernaut" name="newchamp_class">Juggernaut</option>
-              <option value="Control Mage" name="newchamp_class">Control Mage</option>
-              <option value="Burst Mage" name="newchamp_class">Burst Mage</option>
-              <option value="Battlemage" name="newchamp_class">Battlemage</option>
-              <option value="Marksman" name="newchamp_class">Marksman</option>
-              <option value="Tank" name="newchamp_class">Tank</option>
-              <option value="Support" name="newchamp_class">Support</option>
+              <option value="Fighter" >Fighter</option>
+              <option value="Assassin" >Assassin</option>
+              <option value="Juggernaut" >Juggernaut</option>
+              <option value="Control Mage" >Control Mage</option>
+              <option value="Burst Mage" >Burst Mage</option>
+              <option value="Battlemage" >Battlemage</option>
+              <option value="Marksman" >Marksman</option>
+              <option value="Tank" >Tank</option>
+              <option value="Support" >Support</option>
             </select>
             <input type="submit" class="button" value="Update">
           </form>
@@ -170,17 +170,17 @@
       {% endfor %}
     </table>
     <script>
-    function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
-  </script>
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+    </script>
     <script>
       function searchName() {
         // Declare variables
         var input, filter, table, tr, td, i, txtValue;
         input = document.getElementById("searchName");
         filter = input.value.toUpperCase();
-        table = document.getElementById("champions");
+        table = document.getElementById("champions2");
         tr = table.getElementsByTagName("tr");
       
         // Loop through all table rows, and hide those who don't match the search query
@@ -203,12 +203,12 @@
           var input, filter, table, tr, td, i, txtValue;
           input = document.getElementById("searchRole");
           filter = input.value.toUpperCase();
-          table = document.getElementById("champions");
+          table = document.getElementById("champions2");
           tr = table.getElementsByTagName("tr");
         
           // Loop through all table rows, and hide those who don't match the search query
           for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[1];
+            td = tr[i].getElementsByTagName("td")[2];
             if (td) {
               txtValue = td.textContent || td.innerText;
               if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -226,12 +226,12 @@
       var input, filter, table, tr, td, i, txtValue;
       input = document.getElementById("searchRegion");
       filter = input.value.toUpperCase();
-      table = document.getElementById("champions");
+      table = document.getElementById("champions2");
       tr = table.getElementsByTagName("tr");
     
       // Loop through all table rows, and hide those who don't match the search query
       for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[2];
+        td = tr[i].getElementsByTagName("td")[4];
         if (td) {
           txtValue = td.textContent || td.innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -249,12 +249,12 @@
       var input, filter, table, tr, td, i, txtValue;
       input = document.getElementById("searchClass");
       filter = input.value.toUpperCase();
-      table = document.getElementById("champions");
+      table = document.getElementById("champions2");
       tr = table.getElementsByTagName("tr");
     
       // Loop through all table rows, and hide those who don't match the search query
       for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[3];
+        td = tr[i].getElementsByTagName("td")[6];
         if (td) {
           txtValue = td.textContent || td.innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
