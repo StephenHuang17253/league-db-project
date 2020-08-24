@@ -207,7 +207,7 @@ h3 {
     padding: 10px;
     font-family: "Oswald";
     font-size: 24px;
-    font-weight: bold%;
+    font-weight: bold;
     cursor: pointer;
   }
   
@@ -220,7 +220,7 @@ h3 {
 #searchRole:focus {background-color: #1f4068}
 #searchRegion:focus {background-color: #1f4068}
 #searchClass:focus {background-color: #1f4068}
-  /* The container <div> - needed to position the dropdown content */
+  /* The container <div> - needed to position the dropdown content */   
 .dropdown {
     margin: auto;
     width: 50%;
@@ -234,11 +234,24 @@ h3 {
     position: absolute;
     width: 100%;
     background-color: rgb(21, 32, 43);
-    border: 0px solid rgb(29, 161, 242);
+    z-index: 1;
+  }
+  /* Dropdown Content on the edit page. (Hidden by Default) */
+  .dropdown-content-edit {
+    display: none;
+    position: absolute;
+    height: 438px;
+    width: 100%;
+    background-color: rgb(21, 32, 43);
     z-index: 1;
   }
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+.titlesection {
+    padding: 12px;
+}
+
 /*
 #41B3A3 - Blue-Green
 #5383e8 - OP.GG Blue

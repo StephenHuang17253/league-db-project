@@ -21,7 +21,15 @@
         <h3>DB EDITOR</h3>
         <p>This page allows you to make changes to the League Champions DB.</p>
       </div>  
-      
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">SEARCH DATABASE</button>
+      <div id="myDropdown" class="dropdown-content-edit">
+      <input style="width:100%"type="text" id="searchName" onkeyup="searchName()" placeholder="Search for names...">
+      <input style="width:100%"type="text" id="searchRole" onkeyup="searchRole()" placeholder="Search for roles...">  
+      <input style="width:100%"type="text" id="searchRegion" onkeyup="searchRegion()" placeholder="Search for regions...">  
+      <input style="width:100%"type="text" id="searchClass" onkeyup="searchClass()" placeholder="Search for classes...">  
+      </div>
+    </div>    
   <h2>CREATE NEW</h2>
   <div class="container">
   <form method="POST" action="/" autocomplete="off">
@@ -67,14 +75,9 @@
   </form>
   </div>
     
-    <table> 
+    <table id="champions"> 
+
       <caption>UPDATE / DELETE</caption>
-      <div class=container>
-        <input style="width:100%"type="text" id="searchName" onkeyup="searchName()" placeholder="Search for names...">
-        <input style="width:100%"type="text" id="searchRole" onkeyup="searchRole()" placeholder="Search for roles...">  
-        <input style="width:100%"type="text" id="searchRegion" onkeyup="searchRegion()" placeholder="Search for regions...">  
-        <input style="width:100%"type="text" id="searchClass"" onkeyup="searchClass()" placeholder="Search for classes...">  
-        </div>
           <tr>
             <th colspan = 2>Name</th>
             <th colspan = 2>Role</th>
@@ -167,6 +170,11 @@
       {% endfor %}
     </table>
     <script>
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+    </script>
+    <script>
       function searchName() {
         // Declare variables
         var input, filter, table, tr, td, i, txtValue;
@@ -200,7 +208,7 @@
         
           // Loop through all table rows, and hide those who don't match the search query
           for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[1];
+            td = tr[i].getElementsByTagName("td")[2];
             if (td) {
               txtValue = td.textContent || td.innerText;
               if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -223,7 +231,7 @@
     
       // Loop through all table rows, and hide those who don't match the search query
       for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[2];
+        td = tr[i].getElementsByTagName("td")[4];
         if (td) {
           txtValue = td.textContent || td.innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -246,7 +254,7 @@
     
       // Loop through all table rows, and hide those who don't match the search query
       for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[3];
+        td = tr[i].getElementsByTagName("td")[6];
         if (td) {
           txtValue = td.textContent || td.innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
