@@ -188,6 +188,10 @@ tr:nth-child(odd){
 tr:hover {
     background-color: #5383e8;
 }
+th:hover {
+    background-color: #5383e8;
+    cursor: pointer;
+}
 /*End of Table Styling*/
 .w3-blue, .w3-hover-blue:hover {
     color: #ffffff!important;
