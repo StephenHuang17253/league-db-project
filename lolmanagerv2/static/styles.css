@@ -193,11 +193,13 @@ tr:hover {background-color: #5CDB95;}
 th:hover {
     background-color: #5383e8;
     cursor: pointer;
+}
 /*End of Table Styling*/
 .w3-blue, .w3-hover-blue:hover {
     color: #fff !important;
     background-color: #5383e8!important;
 }
+
 h3 {
     font-weight: bold;
     font-family: "Oswald";
