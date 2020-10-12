@@ -3,29 +3,33 @@
 <head>
       <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-      <link rel="stylesheet" href="/static/styles.css">
+      <link rel="stylesheet" href="/static/darkmode.css">
       <title>League Champions Database</title>
     </head>
 
 <body>
+    <!-- Navbar -->
   <ul>
     <li><a class="active" href="/home">Home</a></li>
     <li><a href="/edit">Editor</a></li>
     <li><a href="/forums">Feedback</a></li>
-    <li style="float:right"><a href="/darkhome">Toggle Dark Mode</a></li>
   </ul>
+    <!-- Title Section -->
   <div class="titlesection">
     <header>League Champions DB</header>
     <subhead>by Stephen Huang</subhead>
   </div>
+    <!-- Page Description -->
   <div class="w3-panel w3-display-container w3-blue">
     <span onclick="this.parentElement.style.display='none' "class="w3-button w3-display-topright">&times;</span>  
     <h3>WELCOME</h3>
-    <p>This page allows you to view the database. New Feature: DARK MODE</p>
+    <p>This page allows you to view the database. You can sort the table by clicking on the headers.</p>
   </div> 
+    <!-- Champion Table -->
     <table id="champions"> 
       <caption>All Champions as of Season 10</caption>
       <div class="dropdown">
+          <!-- Search Button -->
         <button onclick="myFunction()" class="dropbtn">SEARCH DATABASE</button>
         <div id="myDropdown" class="dropdown-content">
         <input style="width:100%"type="text" id="searchName" onkeyup="searchName()" placeholder="Search for names...">
